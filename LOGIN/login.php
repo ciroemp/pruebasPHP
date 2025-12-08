@@ -1,20 +1,24 @@
 <?php
-    include("database.php");
+include("database.php");
 
+if (isset($_POST['email'], $_POST['password'], $_POST['nombre']) &&
+    strlen($_POST['email']) > 1 &&
+    strlen($_POST['password']) > 1 &&
+    strlen($_POST['nombre']) > 1) {
 
-if (strlen($_POST['email']) > 1 && strlen($_POST['password']) > 1) {
-    $email = $_POST['email'];
+    $nombre   = $_POST['nombre'];
+    $email    = $_POST['email'];
     $password = $_POST['password'];
     $fechaReg = date("Y-m-d H:i:s");
 
-    $consulta = "INSERT INTO `datos`(nombre, email, fecha) VALUES ('$nombre','$email','$fechaReg'')";
+    $consulta = "INSERT INTO datos (nombre, email, password, fecha) 
+                 VALUES ('$nombre', '$email', '$password', '$fechaReg')";
     $resultado = mysqli_query($conexion, $consulta);
 
     if ($resultado) {
-        ?> <h3 class="ok">¡Te has registrado correctamente!</h3> <?php
+        echo '<h3 class="ok">¡Te has registrado correctamente!</h3>';
     } else {
-        ?> <h3 class="bad">¡Error al registrarse!</h3> <?php
+        echo '<h3 class="bad">¡Error al registrarse!</h3>';
     }
 }
-
 ?>

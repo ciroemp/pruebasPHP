@@ -21,7 +21,7 @@
         <h1 class="titular">BIENVENIDO</h1>
 
     <form action="login.php" method="post">
-        <input type="text" name="email" placeholder="Enter your mail">
+        <input type="email" name="email" placeholder="Enter your mail">
         <input type="text" name="password" placeholder="Enter your password">
         <input type="submit" value="Send">
     </form>
