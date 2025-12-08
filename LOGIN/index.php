@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        crossorigin="anonymous">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -16,24 +16,33 @@
     <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
+
 <body>
-    <div class="container text-center">
-        <h1 class="titular">BIENVENIDO</h1>
+    <div class="vh-100 d-flex justify-content-center align-items-center">
+        <div class="card text-center">
+            <div class="card-header">
+                <h1>BIENVENIDO</h1>
+            </div>
 
-    <form action="login.php" method="post">
-        <input type="text" name="nombre" placeholder="Enter your name">
-        <input type="email" name="email" placeholder="Enter your mail">
-        <input type="text" name="password" placeholder="Enter your password">
-        <input type="submit" value="Send">
-    </form>
+            <div class="card-body text-center">
+                <form action="login.php" method="post">
+                    <input type="text" name="nombre" placeholder="Enter your name">
+                    <input type="email" name="email" placeholder="Enter your mail">
+                    <input type="text" name="password" placeholder="Enter your password">
+                    <input type="submit" value="Send">
+                </form>
 
-    <?php
-        include("login.php");
-    ?>
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        crossorigin="anonymous"></script>
-    </div>
+                <?php
+                include("login.php");
+                ?>
+            </div>
+        </div>
 
-        
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
 </body>
+
 </html>
