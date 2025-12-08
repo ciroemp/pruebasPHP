@@ -122,12 +122,12 @@ body {
 }
 
 /* ESTILIZANDO ENTRADAS DE TEXTO */
-input[type="text"], input[type="password"] {
+input[type="email"], input[type="password"], input[type="text"] {
     
     border: 1px solid #eee;
     border-bottom: 2px solid #555;
     border-radius: 3px;
-    color: white;
+    color: black;
     padding: 10px;
     margin: 20px auto;
     width: 250px; 

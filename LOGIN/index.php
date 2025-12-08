@@ -21,6 +21,7 @@
         <h1 class="titular">BIENVENIDO</h1>
 
     <form action="login.php" method="post">
+        <input type="text" name="nombre" placeholder="Enter your name">
         <input type="email" name="email" placeholder="Enter your mail">
         <input type="text" name="password" placeholder="Enter your password">
         <input type="submit" value="Send">
@@ -28,10 +29,7 @@
 
     <?php
         include("login.php");
-
     ?>
-
-
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         crossorigin="anonymous"></script>
     </div>

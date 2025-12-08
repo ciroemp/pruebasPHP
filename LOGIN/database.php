@@ -1,6 +1,6 @@
 <?php
 
-$conexion = mysqli_connect("localhost:3307", "root", "", "registro");
+$conexion = mysqli_connect("localhost", "root", "", "Registro");
 
 if ($conexion) {
     echo "TODO CORRECTO";
