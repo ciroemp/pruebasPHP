@@ -1,48 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
+    <title>Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-
     <link rel="stylesheet" href="assets/css/style.css">
-
 </head>
 
 <body>
     <div class="vh-100 d-flex justify-content-center align-items-center">
-        <div class="card text-center">
-            <div class="card-header">
-                <h1>BIENVENIDO</h1>
+        <div class="card text-center neon" style="width: 350px;">
+            <div class="card-header titular">
+                <h1>INICIO DE SESIÓN</h1>
             </div>
-
             <div class="card-body text-center">
                 <form action="login.php" method="post">
-                    <input type="text" name="nombre" placeholder="Enter your name">
-                    <input type="email" name="email" placeholder="Enter your mail">
-                    <input type="text" name="password" placeholder="Enter your password">
-                    <input type="submit" value="Send">
+                    <div class="mb-3">
+                        <input type="email" class="form-control" name="email" placeholder="Correo electrónico" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="password" class="form-control" name="password" placeholder="Contraseña" required>
+                    </div>
+                    <input type="submit" class="btn w-100 neon-glow" value="Entrar">
                 </form>
-
-                <?php
-                include("login.php");
-                ?>
+                <div class="mt-3">
+                    <a href="registro.php" class="d-block mb-1">¿Necesitas registrarte?</a>
+                    <a href="recuperar_password.php" class="d-block text-secondary small">¿Olvidaste tu contraseña?</a>
+                </div>
             </div>
         </div>
-
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-
-
-
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

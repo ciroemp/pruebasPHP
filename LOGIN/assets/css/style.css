@@ -1,12 +1,25 @@
+/* 1. DEFINICIÓN DE VARIABLES (Tu paleta de colores centralizada) */
+:root {
+  --color-bg-body: #123B36;
+  /* Verde petróleo profundo */
+  --color-bg-card: #0F2E2A;
+  /* Verde oscuro azulado */
+  --color-text-main: #6BA3BE;
+  /* Azul claro texto */
+  --color-text-light: #B4FFCC;
+  /* Verde menta claro */
+  --color-accent: #59E0A4;
+  /* Verde menta medio */
+  --color-neon: #D0FF45;
+  /* Verde brillante neón (LA LUZ) */
+  --color-neon-text: #388E66;
+  /* Texto oscuro para contraste sobre neón */
+}
+
+/* FUENTES */
 .poppins-thin {
   font-family: "Poppins", sans-serif;
   font-weight: 100;
-  font-style: normal;
-}
-
-.poppins-extralight {
-  font-family: "Poppins", sans-serif;
-  font-weight: 200;
   font-style: normal;
 }
 
@@ -22,126 +35,147 @@
   font-style: normal;
 }
 
-.poppins-medium {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-}
-
-.poppins-semibold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-style: normal;
-}
-
 .poppins-bold {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
   font-style: normal;
 }
 
-.poppins-extrabold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 800;
-  font-style: normal;
-}
+/* ... (puedes dejar el resto de fuentes aquí) ... */
 
-.poppins-black {
-  font-family: "Poppins", sans-serif;
-  font-weight: 900;
-  font-style: normal;
-}
-
-.poppins-thin-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 100;
-  font-style: italic;
-}
-
-.poppins-extralight-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 200;
-  font-style: italic;
-}
-
-.poppins-light-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-  font-style: italic;
-}
-
-.poppins-regular-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.poppins-medium-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-style: italic;
-}
-
-.poppins-semibold-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-style: italic;
-}
-
-.poppins-bold-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-  font-style: italic;
-}
-
-.poppins-extrabold-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 800;
-  font-style: italic;
-}
-
-.poppins-black-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 900;
-  font-style: italic;
-}
-
-
+/* ESTILOS GENERALES */
 body {
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    font-family: "Poppins", sans-serif;
-    
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--color-bg-body);
+  color: var(--color-text-main);
 }
+
+/* =========================================
+   2. CLASE DE UTILIDAD NEÓN (REUTILIZABLE)
+   ========================================= */
+.neon {
+  background-color: var(--color-neon) !important;
+  /* #D0FF45 (Tu verde limón) */
+  border-color: var(--color-neon);
+  color: var(--color-neon-text) !important;
+  /* Texto ajustado al neón */
+
+  /* Aquí se enciende la luz */
+  box-shadow: 0 0 10px var(--color-neon),
+    0 0 30px var(--color-neon),
+    0 0 60px var(--color-neon);
+}
+
+/* =========================================
+   BOTÓN EVOLUTIVO (Verde -> Neón Limón)
+   ========================================= */
+
+.neon-glow {
+  /* ESTADO 1: VERDE NORMAL (Reposo) */
+  background-color: var(--color-accent) !important;
+  /* #59E0A4 (Tu verde menta/medio) */
+  color: #123B36 !important;
+  /* Texto oscuro */
+  border: 2px solid var(--color-accent);
+  /* Borde del mismo color */
+  font-weight: bold;
+
+  /* Sin sombra neón todavía, o una muy sutil */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+
+  /* La transición es clave para que el cambio de color sea suave */
+  transition: all 0.3s ease-in-out;
+}
+
+/* ESTADO 2: MOUSE ENCIMA (Explosión Neón) */
+.neon-glow:hover {
+  background-color: var(--color-neon) !important;
+  /* #D0FF45 (Tu verde limón) */
+  border-color: var(--color-neon);
+  color: var(--color-neon-text) !important;
+  /* Texto ajustado al neón */
+
+  /* Aquí se enciende la luz */
+  box-shadow: 0 0 10px var(--color-neon),
+    0 0 30px var(--color-neon),
+    0 0 60px var(--color-neon);
+
+  transform: scale(1.05);
+  /* Crece un poquito */
+  cursor: pointer;
+}
+
+/* ESTADO 3: CLIC / FOCUS (Evitar el azul de Bootstrap) */
+.neon-glow:active,
+.neon-glow:focus {
+  background-color: var(--color-neon) !important;
+  border-color: var(--color-neon) !important;
+  color: var(--color-neon-text) !important;
+  box-shadow: 0 0 15px var(--color-neon), inset 0 0 10px rgba(0, 0, 0, 0.2) !important;
+  outline: none !important;
+  /* IMPORTANTE: Mata el borde azul nativo */
+}
+
+
+/* =========================================
+   ELEMENTOS ESPECÍFICOS
+   ========================================= */
 
 .titular {
-    color: #0098cb;
-    margin-top: 20px;
-    align-content: center;
+  color: var(--color-accent);
+  background-color: var(--color-bg-body) !important;
+  border: 2px solid var(--color-neon);
+  align-content: center;
+  /* Si quieres que el titular brille también, puedes descomentar esto: */
+  /* box-shadow: 0 0 10px var(--color-neon); */
 }
 
-/* ESTILIZANDO ENTRADAS DE TEXTO */
-input[type="email"], input[type="password"], input[type="text"], input[type="number"] {
-    
-    border: 1px solid #eee;
-    border-bottom: 2px solid #555;
-    border-radius: 3px;
-    color: black;
-    padding: 10px;
-    margin: 20px auto;
-    width: 250px; 
-    outline: none;
-    display: block;
+/* Inputs de Texto */
+input[type="email"],
+input[type="password"],
+input[type="text"],
+input[type="number"] {
+  border: 2px solid var(--color-neon);
+  border-bottom: 2px solid var(--color-neon);
+  border-radius: 3px;
+  background-color: #B4FFCC;
+  /* Opcional, para que se vea limpio */
+  color: #fff;
+  padding: 10px;
+  margin: 20px auto;
+  width: 250px;
+  outline: none;
+  display: block;
 }
 
+/* Input Submit (El botón) */
 input[type="submit"] {
-    padding: 10px;
-    color: #fff !important;
-    background-color: #0098cb !important;
-    width: 250px; /* Ajustado para que coincida con el ancho de las entradas (opcional) */
-    margin: 20px 0; /* Ajustado para centrar y usar el mismo espaciado vertical */
-    border: 0;
-    border-radius: 3px;
-    cursor: pointer;
+  /* Aquí solo ponemos TAMAÑO y POSICIÓN */
+  padding: 10px;
+  width: 250px;
+  margin: 20px 0;
+  border-radius: 3px;
+  background-color: var(--color-neon);
+  /* Fondo neón */
+  color: var(--color-bg-card);
+  /* Texto oscuro */
+
+  /* Hereda los estilos visuales de la clase .neon-glow si se la pones en HTML,
+       o puedes usar @extend si usaras SASS. 
+       
+       Como es CSS puro, simplemente aplicamos las propiedades visuales aquí 
+       usando las variables, o mejor aún, le agregas la clase en el HTML.
+    */
 }
+
+/* Tarjetas */
+.card .card-body {
+  background-color: var(--color-bg-card);
+  color: var(--color-text-light);
+  border: 2px solid var(--color-neon);
+  /* Ejemplo: Sombra suave en la tarjeta usando el color neón */
+  box-shadow: 0 0 5px rgba(208, 255, 69, 0.2);
+  }
